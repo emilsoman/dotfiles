@@ -1,0 +1,26 @@
+[user]
+	name = Emil Soman
+	email = emil.soman@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[color]
+	ui = auto
+[merge]
+	conflictstyle = diff3
+[core]
+	editor = vim
+[alias]
+  unstage = reset HEAD
+  lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  this = !git init && git add . && git commit -m \"Initial commit\"
+  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+  ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+  find = !git ls-tree -r --name-only HEAD | grep --color $1
+  masterdiff = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+[github]
+	user = emilsoman
+	password = password
+[push]
+	default = simple
