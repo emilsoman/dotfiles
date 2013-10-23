@@ -121,3 +121,5 @@ PATH=$PATH:$HOME/Tools/git-aliases # My awesome tools
 
 #Skype Garbled audio workaround
 PULSE_LATENCY_MSEC=10
+
+#source ~/.rubotorc
