@@ -10,9 +10,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 
 " For Snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
+Bundle 'msanders/snipmate.vim'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-endwise'
