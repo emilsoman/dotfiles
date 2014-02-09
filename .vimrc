@@ -38,6 +38,8 @@ set shiftwidth=2
 set expandtab
 "Always show current position
 set ruler
+"Draw a ruler at 80 chars
+set colorcolumn=80
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -60,8 +62,13 @@ set wildignore=*.o,*~,*.pyc
 set laststatus=2
 set statusline=%f "tail of the filename
 
-call pathogen#infect()
-call pathogen#helptags()
+"Goodbye pathogen
+"call pathogen#infect()
+"call pathogen#helptags()
+
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
 " Display unprintable characters
 set list!
@@ -80,7 +87,7 @@ set noerrorbells                " Disable error bells
 " Undo
 set undolevels=10000
 if has("persistent_undo")
-  set undodir=~/.vim/undo       " Allow undoes to persist even after a file is closed
+  set undodir=/tmp/vim/undo     " Allow undoes to persist even after a file is closed
   set undofile
 endif
 
@@ -104,7 +111,7 @@ noremap <C-]> g<C-]>
 let mapleader = ","
 
 "Use global temp directory
-set directory=~/.vim/tmp
+set directory=/tmp/vim/temp
 
 "custom commands
 "
@@ -113,23 +120,11 @@ command Sudow w !sudo tee %
 """""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""
-nnoremap <C-g> :NERDTreeToggle<cr>
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
-let NERDTreeHighlightCursorline=1
-let NERDTreeShowBookmarks=1
-let NERDTreeShowFiles=1
-
-" Screen settings
-"let g:ScreenImpl = 'Tmux'
-"let g:ScreenShellTmuxInitArgs = '-2'
-"let g:ScreenShellInitialFocus = 'shell'
-"let g:ScreenShellQuitOnVimExit = 0
-"map <F5> :ScreenShellVertical<CR>
-"command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
-"map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
-"map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
-"map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
-"map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+"nnoremap <C-g> :NERDTreeToggle<cr>
+"let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+"let NERDTreeHighlightCursorline=1
+"let NERDTreeShowBookmarks=1
+"let NERDTreeShowFiles=1
 
 "Shortcut for running Rspec for current file : ,R
 "and the example under current line: ,r
@@ -176,6 +171,8 @@ command! CucumberCurrent call CucumberCurrent()
 " Toggle paste mode while in insert mode with F12
 set pastetoggle=<F3>
 
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
 
 " Powerline fancy symbols
 " let g:Powerline_symbols = 'fancy'
@@ -183,7 +180,10 @@ let g:Powerline_symbols = 'unicode'
 
 "Common abbreviations
 abbr dbg require 'debugger'; debugger
+abbr pry require 'pry'; binding.pry
 abbr sph require 'spec_helper'
+
+"Cucumber regex abbrs
 abbr mq "([^"]*)"
 abbr st /^ "([^"]*)"  $/
 

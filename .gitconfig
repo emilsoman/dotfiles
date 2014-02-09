@@ -9,6 +9,7 @@
 	conflictstyle = diff3
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [alias]
   unstage = reset HEAD
   lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all

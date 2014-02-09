@@ -1,4 +1,4 @@
-# Sublime as default editor
+# Vim as default editor
 Pry.config.editor = "vim"
 
 # Prompt with ruby version
@@ -20,5 +20,21 @@ end
 class Hash
   def self.toy(n=10)
     Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
+  end
+end
+
+if defined?(ActiveRecord::Base)
+  class ActiveRecord::Base
+    class << self
+      def [](id)
+        find_by_identifier(id)
+      end
+    end
+  end
+end
+
+class Object
+  def local_methods
+    (methods - Object.instance_methods).sort
   end
 end
