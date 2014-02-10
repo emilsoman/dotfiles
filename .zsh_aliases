@@ -30,6 +30,7 @@ alias hostdir='ruby -run -e httpd . -p 5000'
 alias todo="grep -r 'OPTIMIZE\|FIXME\|TODO' *"
 alias clipboard='xclip -sel clip'
 alias journal="$EDITOR ~/Workspace/Tasks/$(date +%F).md"
+alias tcplisten="lsof -iTCP -sTCP:LISTEN"
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'
