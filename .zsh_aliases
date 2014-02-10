@@ -1,0 +1,46 @@
+
+# MY BASH ALIASES
+#
+#Current Project Path here :
+export CURRENT_PROJECT_PATH='~/Workspace'
+
+#Dont use rubygems-bundler that always assumes you want to 'bundle exec' everything
+export NOEXEC_DISABLE=1
+
+alias vi='vim'
+export EDITOR='vi'
+#alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
+#alias sq='mysql -u root -proot'
+alias gitlog='git log --name-status'
+alias gitlogtree="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+#alias etrail='find . \( -name "*.rb" -o -name "*.html" -o -name "*.js" -o -name "*.coffee" -o -name "*.css" -o -name "*.scss" -o -name "*.erb" -o -name "*.yml" -o -name "*.ru" \) -exec sed -i "s/\s*$//" {} \; '
+#alias etrailrb='find . -name "*.rb" -exec sed -i "s/\s*$//" {} \; '
+#alias eblank='find . \( -name "*.rb" -o -name "*.html" -o -name "*.js" -o -name "*.coffee" -o -name "*.css" -o -name "*.scss" -o -name "*.erb" -o -name "*.yml" -o -name "*.ru" \) -exec sed -i "s/^\s+$/\n/g" {} \; '
+#alias sig_freud='rails_best_practices -f html .'
+alias main="cd $CURRENT_PROJECT_PATH && clear && pwd"
+alias clog="tail -100f $CURRENT_PROJECT_PATH/log/development.log"
+alias trlog="> $CURRENT_PROJECT_PATH/log/development.log"
+alias raket="rake -P | grep rake"
+alias tarup="tar cfz"
+alias untar="tar xvfz"
+alias tarlist="tar -tzf"
+alias queueinit="rake resque:work QUEUE='*'"
+#alias hostdir='python -m SimpleHTTPServer'
+alias hostdir='ruby -run -e httpd . -p 5000'
+alias todo="grep -r 'OPTIMIZE\|FIXME\|TODO' *"
+alias clipboard='xclip -sel clip'
+alias journal="$EDITOR ~/Workspace/Tasks/$(date +%F).md"
+
+#Project Path Aliases
+alias wspace='cd ~/Workspace && clear && pwd'
+alias personal='cd ~/Personal && clear && pwd'
+alias ref='cd ~/Reference && clear && pwd'
+alias blog='cd ~/Personal/blog && clear && pwd'
+alias hmer='cd ~/Personal/homer && clear && pwd'
+alias testing='cd ~/Testing && clear && pwd'
+alias bisl='cd ~/Personal/bisleri && clear && pwd'
+alias oss='cd ~/OpenSource && clear && pwd'
+alias precommit=".git/hooks/pre-commit"
+
+#Tmux shortcuts
+alias tkill='tmux kill-session'
