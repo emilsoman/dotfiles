@@ -174,6 +174,9 @@ set pastetoggle=<F3>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Duplicate visual block
+vmap <leader>d y'>p
+
 " Powerline fancy symbols
 " let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
