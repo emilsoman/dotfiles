@@ -87,7 +87,7 @@ set noerrorbells                " Disable error bells
 " Undo
 set undolevels=10000
 if has("persistent_undo")
-  set undodir=/tmp/vim/undo     " Allow undoes to persist even after a file is closed
+  set undodir=~/.vim/undo      " Allow undoes to persist even after a file is closed
   set undofile
 endif
 
@@ -111,7 +111,7 @@ noremap <C-]> g<C-]>
 let mapleader = ","
 
 "Use global temp directory
-set directory=/tmp/vim/temp
+set directory=~/.vim/tmp
 
 "custom commands
 "
