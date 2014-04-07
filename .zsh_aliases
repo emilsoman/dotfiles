@@ -2,12 +2,12 @@
 # MY BASH ALIASES
 #
 #Current Project Path here :
-export CURRENT_PROJECT_PATH='~/Workspace'
+export CURRENT_PROJECT_PATH='~/Workspace/KFoundry'
 
 #Dont use rubygems-bundler that always assumes you want to 'bundle exec' everything
 export NOEXEC_DISABLE=1
 
-alias vi='vim'
+alias vi='/usr/local/bin/vim'
 export EDITOR='vi'
 #alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
 #alias sq='mysql -u root -proot'

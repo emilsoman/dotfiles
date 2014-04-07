@@ -51,3 +51,8 @@ PATH=$PATH:$HOME/Tools/bin # Add custom tools bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh # Use NVM for node version management
+
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line

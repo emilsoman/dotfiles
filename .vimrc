@@ -38,8 +38,6 @@ set shiftwidth=2
 set expandtab
 "Always show current position
 set ruler
-"Draw a ruler at 80 chars
-set colorcolumn=80
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -183,7 +181,7 @@ let g:Powerline_symbols = 'unicode'
 
 "Common abbreviations
 abbr dbg require 'debugger'; debugger
-abbr pry require 'pry'; binding.pry
+abbr pryy require 'pry'; binding.pry
 abbr sph require 'spec_helper'
 
 "Cucumber regex abbrs
@@ -192,3 +190,17 @@ abbr st /^ "([^"]*)"  $/
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+"Draw a dark grey ruler at 80 chars
+set colorcolumn=80
+highlight ColorColumn ctermbg=234
+
+" Show line cursor in insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Ctrl-P for only buffer
+let g:ctrlp_cmd = 'CtrlPBuffer'
+
+" Enable backspace in insert mode
+set backspace=2
