@@ -1,7 +1,7 @@
 Installation
 
     git clone git@github.com:emilsoman/dotfiles.git ~/dotfiles
-    cd ~/dotfiles
-    sh install.sh
+    # Setup symlinks as required
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
-Open VIM and run `:VundleInstall`
+Open VIM and run `:PluginInstall`
