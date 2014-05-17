@@ -204,3 +204,24 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " Enable backspace in insert mode
 set backspace=2
+
+" Syntastic
+"==========
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+" Set dictionary
+" So you can autocomplete from dictionary using <C-X><C-K>
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+" Use tab for snippet expansion
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+" Use up and down for YCM popover nav
+let g:ycm_key_list_select_completion=['<Down>']
+let g:ycm_key_list_previous_completion=['<Up>']
+
+" Kashyap's extra bindings for pairing
+imap jk <Esc>
+imap kj  <Esc>
+nnoremap ; :
