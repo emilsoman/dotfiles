@@ -93,7 +93,7 @@ endif
 set background=dark
 colors molokai
 " colors zenburn
-" colors solarized
+" colors mustang
 
 "ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
