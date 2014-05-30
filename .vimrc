@@ -91,7 +91,9 @@ endif
 
 " Colors
 set background=dark
-colors molokai
+"colors molokai
+let g:gruvbox_italic=0
+colors gruvbox
 " colors zenburn
 " colors mustang
 
@@ -175,9 +177,21 @@ nnoremap <leader><leader> <c-^>
 " Duplicate visual block
 vmap <leader>d y'>p
 
-" Powerline fancy symbols
-" let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols = 'unicode'
+" let g:Powerline_symbols = 'unicode'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = '📌'
+let g:airline_symbols.whitespace = '💀'
+let g:airline_symbols.readonly = '🔒'
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 
 "Common abbreviations
 abbr dbg require 'debugger'; debugger
@@ -200,7 +214,14 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Ctrl-P for only buffer
-let g:ctrlp_cmd = 'CtrlPBuffer'
+"let g:ctrlp_cmd = 'CtrlPBuffer'
+
+" Cache CtrlP indexes
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" Make CtrlP use ag to list the files.
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Enable backspace in insert mode
 set backspace=2
@@ -220,6 +241,25 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Use up and down for YCM popover nav
 let g:ycm_key_list_select_completion=['<Down>']
 let g:ycm_key_list_previous_completion=['<Up>']
+" Autocomplete using words from comments and strings
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+" Remove delay after pressing escape and clearing the visual selection
+set timeoutlen=1000 ttimeoutlen=0
+
+" Easier buffer switching
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
 
 " Kashyap's extra bindings for pairing
 imap jk <Esc>

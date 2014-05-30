@@ -13,6 +13,7 @@ export EDITOR='vi'
 #alias sq='mysql -u root -proot'
 alias gitlog='git log --name-status'
 alias gitlogtree="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias gitdeletemerged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 #alias etrail='find . \( -name "*.rb" -o -name "*.html" -o -name "*.js" -o -name "*.coffee" -o -name "*.css" -o -name "*.scss" -o -name "*.erb" -o -name "*.yml" -o -name "*.ru" \) -exec sed -i "s/\s*$//" {} \; '
 #alias etrailrb='find . -name "*.rb" -exec sed -i "s/\s*$//" {} \; '
 #alias eblank='find . \( -name "*.rb" -o -name "*.html" -o -name "*.js" -o -name "*.coffee" -o -name "*.css" -o -name "*.scss" -o -name "*.erb" -o -name "*.yml" -o -name "*.ru" \) -exec sed -i "s/^\s+$/\n/g" {} \; '
@@ -31,6 +32,7 @@ alias todo="grep -r 'OPTIMIZE\|FIXME\|TODO' *"
 alias clipboard='xclip -sel clip'
 alias journal="$EDITOR ~/Workspace/Tasks/$(date +%F).md"
 alias tcplisten="lsof -iTCP -sTCP:LISTEN"
+alias rtags="ctags -R --languages=ruby,coffee --exclude=.git --exclude=log --exclude=vendor"
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'
