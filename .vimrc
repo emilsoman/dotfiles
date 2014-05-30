@@ -216,12 +216,18 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Ctrl-P for only buffer
 "let g:ctrlp_cmd = 'CtrlPBuffer'
 
-" Cache CtrlP indexes
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 " Make CtrlP use ag to list the files.
+" Note: Use .agignore to ignore files/dirs
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+" Sane Ignore For ctrlp when not using ag
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.bundle\|public\|data\|log\|tmp$\|vendor$',
+  "\ 'file': '\.exe$\|\.so$\|\.dat$'
+  "\ }
+" Do not clear ctrlp cache when vim exits
+let g:ctrlp_clear_cache_on_exit = 0
 
 " Enable backspace in insert mode
 set backspace=2
