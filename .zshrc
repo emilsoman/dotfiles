@@ -49,7 +49,7 @@ source ~/.zsh_aliases
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH=$PATH:$HOME/Tools/bin # Add custom tools bin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh # Use NVM for node version management
 
 bindkey "[D" backward-word

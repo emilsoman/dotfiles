@@ -24,5 +24,6 @@ Plugin 'tsaleh/vim-matchit'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
+Plugin 'danro/rename.vim'
 
 filetype on

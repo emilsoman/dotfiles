@@ -249,6 +249,7 @@ let g:ycm_key_list_select_completion=['<Down>']
 let g:ycm_key_list_previous_completion=['<Up>']
 " Autocomplete using words from comments and strings
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
 
 " Remove delay after pressing escape and clearing the visual selection
 set timeoutlen=1000 ttimeoutlen=0
@@ -266,6 +267,7 @@ nnoremap <Leader>6 :6b<CR>
 nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
+
 
 " Kashyap's extra bindings for pairing
 imap jk <Esc>
