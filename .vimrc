@@ -81,7 +81,11 @@ endif
 " In diff mode, ignore whitespace changes and align unchanged lines
 set diffopt=filler,iwhite
 
-set noerrorbells                " Disable error bells
+" Disable error bells
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 " Undo
 set undolevels=10000
 if has("persistent_undo")
@@ -175,7 +179,7 @@ set pastetoggle=<F3>
 nnoremap <leader><leader> <c-^>
 
 " Duplicate visual block
-vmap <leader>d y'>p
+vnoremap <leader>d y'>p
 
 " let g:Powerline_symbols = 'unicode'
 if !exists('g:airline_symbols')
@@ -267,6 +271,10 @@ nnoremap <Leader>6 :6b<CR>
 nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
+
+" Copy/Paste to/from clipboard
+vnoremap <Leader>y "*y
+nnoremap <Leader>p "*p
 
 
 " Kashyap's extra bindings for pairing
