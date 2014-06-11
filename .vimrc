@@ -259,7 +259,7 @@ let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
 set timeoutlen=1000 ttimeoutlen=0
 
 " Easier buffer switching
-nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>l :ls<CR>:b
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
 nnoremap <Leader>1 :1b<CR>
@@ -276,6 +276,8 @@ nnoremap <Leader>9 :9b<CR>
 vnoremap <Leader>y "*y
 nnoremap <Leader>p "*p
 
+" Toggle search highlights
+nnoremap <Leader>/ :set hls!<CR>
 
 " Kashyap's extra bindings for pairing
 imap jk <Esc>
