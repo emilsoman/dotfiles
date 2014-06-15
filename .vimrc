@@ -98,8 +98,8 @@ set background=dark
 "colors molokai
 let g:gruvbox_italic=0
 colors gruvbox
-" colors zenburn
-" colors mustang
+ "colors zenburn
+ "colors mustang
 
 "ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
@@ -114,7 +114,7 @@ noremap <C-]> g<C-]>
 "Set Leader key to comma
 let mapleader = ","
 
-"Use global temp directory
+"Use global swap directory
 set directory=~/.vim/tmp
 
 "custom commands

@@ -19,11 +19,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'tsaleh/vim-matchit'
-"Plugin 'Lokaltog/vim-powerline'
-"Plugin 'bling/vim-bufferline'
+Plugin 'vim-scripts/matchit.zip'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'morhetz/gruvbox'
 Plugin 'danro/rename.vim'
+Plugin 'emilsoman/spec-outline.vim'
 
 filetype on

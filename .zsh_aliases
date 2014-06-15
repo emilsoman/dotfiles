@@ -44,6 +44,7 @@ alias testing='cd ~/Testing && clear && pwd'
 alias bisl='cd ~/Personal/bisleri && clear && pwd'
 alias oss='cd ~/OpenSource && clear && pwd'
 alias precommit=".git/hooks/pre-commit"
+alias dotfiles="personal && cd dotfiles"
 
 #Tmux shortcuts
 alias tkill='tmux kill-session'
