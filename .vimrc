@@ -1,262 +1,120 @@
-" Forget being compatible with good ol' vi
-set nocompatible
+" Change some default Vim configs
+" ===============================
 
+set nocompatible " No need of compatibility with vi
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
-" Get that filetype stuff happening
+" Enable Filetype magic
 filetype on
 filetype plugin on
 filetype indent on
 
-" Turn on that syntax highlighting
-syntax on
+let mapleader = ","         " Set Leader key to comma
+syntax on                   " Turn on syntax highlighting
+set hidden                  " Allow swapping buffers by just hiding them
+set lazyredraw              " Don't update the display while executing macros
+set showmode                " Show current mode
+set nowrap                  " Do not wrap text
+set number                  " Show line numbers
+set hls                     " Highlight searches
+set ic                      " Ignore case
+set smartcase               " Use case when searching with cases
+set incsearch               " Incremental search
+set autoindent smartindent  " set smartindent
+set ruler                   " Always show current position
+set autoread                " Autoread when a file is changed from the outside
+set wildmenu                " Turn on the WiLd menu
+set wildignore=*.o,*~,*.pyc " Ignore compiled files
+set laststatus=2            " Always show status line
+set statusline=%f           " tail of the filename
+set diffopt=filler,iwhite   " In diff mode, ignore whitespace changes
+set directory=~/.vim/tmp    " Use global swap directory
+set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
+set backspace=2             " Enable backspace in insert mode
+set shell=/bin/bash         " Can do with bash shell for vim
 
-" Why is this not a default
-set hidden
-
-" Don't update the display while executing macros
-set lazyredraw
-
-" At least let yourself know what mode you're in
-set showmode
-set t_Co=256
-" Do not wrap text
-set nowrap
-" Show line numbers
-set number
-" Highlight searches
-set hls
-" Ignore case
-set ic
-set smartcase
-" Incremental search
-set incsearch
-" set smartindent
-set autoindent smartindent
+" Use 2 spaces for tab
 set tabstop=2
 set shiftwidth=2
 set expandtab
-"Always show current position
-set ruler
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Turn on the WiLd menu
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-
-"Always show current position
-set laststatus=2
-set statusline=%f "tail of the filename
-
-"Goodbye pathogen
-"call pathogen#infect()
-"call pathogen#helptags()
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
-" Display unprintable characters
+" Show symbols for tabs and trailing whitespace
 set list!
 set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
 
+" Set dictionary
+" So you can autocomplete from dictionary using <C-X><C-K>
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+" Use 256 colors when terminal allows
 if $TERM =~ '256color'
   set t_Co=256
 elseif $TERM =~ '^xterm$'
   set t_Co=256
 endif
 
-" In diff mode, ignore whitespace changes and align unchanged lines
-set diffopt=filler,iwhite
-
-" Disable error bells
-set noerrorbells visualbell t_vb=
-if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
-endif
-" Undo
-set undolevels=10000
-if has("persistent_undo")
-  set undodir=~/.vim/undo      " Allow undoes to persist even after a file is closed
-  set undofile
-endif
-
-" Colors
-set background=dark
-"colors molokai
-let g:gruvbox_italic=0
-colors gruvbox
- "colors zenburn
- "colors mustang
-
-"ruby
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-"Ctags should list all matching tags
-noremap <C-]> g<C-]>
-
-"Set Leader key to comma
-let mapleader = ","
-
-"Use global swap directory
-set directory=~/.vim/tmp
-
-"custom commands
-"
-command Sudow w !sudo tee %
-
-"""""""""""""""""""""""""
-" Plugins
-"""""""""""""""""""""""""
-"nnoremap <C-g> :NERDTreeToggle<cr>
-"let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
-"let NERDTreeHighlightCursorline=1
-"let NERDTreeShowBookmarks=1
-"let NERDTreeShowFiles=1
-
-"Shortcut for running Rspec for current file : ,R
-"and the example under current line: ,r
-function! RSpecFile()
-  execute("!clear && bundle exec rspec " . expand("%p"))
-endfunction
-map <leader>R :call RSpecFile() <CR>
-command! RSpecFile call RSpecFile()
-
-function! RSpecCurrent()
-  execute("!clear && bundle exec rspec " . expand("%p") . ":" . line("."))
-endfunction
-map <leader>r :call RSpecCurrent() <CR>
-command! RSpecCurrent call RSpecCurrent()
-
-"Shortcut for running Zeus Rspec for current file : ,Z
-"and the example under current line: ,z
-function! ZeusRSpecFile()
-  execute("!clear && zeus rspec " . expand("%p"))
-endfunction
-map <leader>Z :call ZeusRSpecFile() <CR>
-command! ZeusRSpecFile call ZeusRSpecFile()
-
-function! ZeusRSpecCurrent()
-  execute("!clear && zeus rspec " . expand("%p") . ":" . line("."))
-endfunction
-map <leader>z :call ZeusRSpecCurrent() <CR>
-command! ZeusRSpecCurrent call ZeusRSpecCurrent()
-
-"Shortcut for running Cucumber for current file : ,C
-"and the example under current line: ,c
-function! CucumberFile()
-  execute("!clear && bundle exec cucumber " . expand("%p"))
-endfunction
-map <leader>C :call CucumberFile() <CR>
-command! CucumberFile call CucumberFile()
-
-function! CucumberCurrent()
-  execute("!clear && bundle exec cucumber " . expand("%p") . ":" . line("."))
-endfunction
-map <leader>c :call CucumberCurrent() <CR>
-command! CucumberCurrent call CucumberCurrent()
-
-" Toggle paste mode while in insert mode with F12
-set pastetoggle=<F3>
-
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
-" Duplicate visual block
-vnoremap <leader>d y'>p
-
-" let g:Powerline_symbols = 'unicode'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = '📌'
-let g:airline_symbols.whitespace = '💀'
-let g:airline_symbols.readonly = '🔒'
-let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-
-"Common abbreviations
-abbr dbg require 'debugger'; debugger
-abbr pryy require 'pry'; binding.pry
-abbr sph require 'spec_helper'
-
-"Cucumber regex abbrs
-abbr mq "([^"]*)"
-abbr st /^ "([^"]*)"  $/
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
 "Draw a dark grey ruler at 80 chars
 set colorcolumn=80
 highlight ColorColumn ctermbg=234
 
 " Show line cursor in insert mode
+" and block cursor in normal mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Ctrl-P for only buffer
-"let g:ctrlp_cmd = 'CtrlPBuffer'
+" Disable error bells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
-" Make CtrlP use ag to list the files.
-" Note: Use .agignore to ignore files/dirs
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" MOAR undo which persists
+set undolevels=10000
+if has("persistent_undo")
+  set undodir=~/.vim/undo " Allow undos to persist even after a file is closed
+  set undofile
 endif
-" Sane Ignore For ctrlp when not using ag
-"let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.bundle\|public\|data\|log\|tmp$\|vendor$',
-  "\ 'file': '\.exe$\|\.so$\|\.dat$'
-  "\ }
-" Do not clear ctrlp cache when vim exits
-let g:ctrlp_clear_cache_on_exit = 0
 
-" Enable backspace in insert mode
-set backspace=2
-
-" Syntastic
-"==========
-let g:syntastic_mode_map = { 'mode': 'passive' }
-
-" Set dictionary
-" So you can autocomplete from dictionary using <C-X><C-K>
-set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
-
-" Use tab for snippet expansion
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-" Use up and down for YCM popover nav
-let g:ycm_key_list_select_completion=['<Down>']
-let g:ycm_key_list_previous_completion=['<Up>']
-" Autocomplete using words from comments and strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 
 " Remove delay after pressing escape and clearing the visual selection
 set timeoutlen=1000 ttimeoutlen=0
+
+
+" Plugin config overrides
+" =======================
+if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
+  source ~/.vim/vimrc.plugin_overrides
+endif
+
+" Load plugins
+" ============
+if filereadable(expand("~/.vim/vimrc.bundles"))
+  source ~/.vim/vimrc.bundles
+endif
+
+
+" Colors
+" ======
+set background=dark
+let g:gruvbox_italic=0
+colors gruvbox
+"colors zenburn
+"colors mustang
+"colors molokai
+
+" Custom shortcuts
+" ================
+" Allow saving of files as sudo when I forget to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+"Ctags should list all matching tags
+noremap <C-]> g<C-]>
+
+" Switch between the last two buffers
+nnoremap <leader><leader> <c-^>
+
+" Duplicate visual block
+vnoremap <leader>d y'>p
 
 " Easier buffer switching
 nnoremap <Leader>l :ls<CR>:b
@@ -279,7 +137,18 @@ nnoremap <Leader>p "*p
 " Toggle search highlights
 nnoremap <Leader>/ :set hls!<CR>
 
+" Tabularize shortcut
+vnoremap <Leader>t :Tabularize /
+
+" Abbreviations
+abbr dbg require 'debugger'; debugger
+abbr pryy require 'pry'; binding.pry
+abbr sph require 'spec_helper'
+"Cucumber regex abbrs
+abbr mq "([^"]*)"
+abbr st /^ "([^"]*)"  $/
+
 " Kashyap's extra bindings for pairing
-imap jk <Esc>
-imap kj  <Esc>
-nnoremap ; :
+"imap jk <Esc>
+"imap kj  <Esc>
+"nnoremap ; :

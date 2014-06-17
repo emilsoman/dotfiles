@@ -1,0 +1,68 @@
+" GitGutter
+" =========
+let g:gitgutter_realtime = 0 " Do not update git gutter in realtime
+
+" let g:Powerline_symbols = 'unicode'
+
+" Airline
+" =======
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = '📌'
+let g:airline_symbols.whitespace = '💀'
+let g:airline_symbols.readonly = '🔒'
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" CtrlP
+" =====
+" Ctrl-P for only buffer
+"let g:ctrlp_cmd = 'CtrlPBuffer'
+
+" Make CtrlP use ag to list the files.
+" Note: Use .agignore to ignore files/dirs
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+" Sane Ignore For ctrlp when not using ag
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.bundle\|public\|data\|log\|tmp$\|vendor$',
+  "\ 'file': '\.exe$\|\.so$\|\.dat$'
+  "\ }
+" Do not clear ctrlp cache when vim exits
+let g:ctrlp_clear_cache_on_exit = 0
+
+
+" Syntastic
+" =========
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+
+" UltiSnips
+" =========
+" Use tab for snippet expansion
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" YouCompleteMe
+" =============
+" Use up and down for YCM popover nav
+let g:ycm_key_list_select_completion=['<Down>']
+let g:ycm_key_list_previous_completion=['<Up>']
+" Autocomplete using words from comments and strings
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
+
+" vim-ruby
+" ========
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1

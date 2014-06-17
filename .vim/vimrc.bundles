@@ -1,0 +1,31 @@
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+
+" Define bundles via Github repos
+Plugin 'rking/ag.vim'               " silver searcher in vim
+Plugin 'kien/ctrlp.vim'             " Fuzzy file finder
+Plugin 'scrooloose/nerdcommenter'   " Comment & uncomment
+
+Plugin 'vim-ruby/vim-ruby'          " Ruby autocomplete etc
+Plugin 'Valloric/YouCompleteMe'     " Autocompletion
+Plugin 'SirVer/ultisnips'           " Autocomplete snippets
+Plugin 'honza/vim-snippets'         " LOADS of snippets
+
+Plugin 'kchmck/vim-coffee-script'   " Coffee filetype
+Plugin 'tpope/vim-endwise'          " Auto insert 'end' in ruby
+Plugin 'tpope/vim-fugitive'         " Gblame and Gdiff FTW
+Plugin 'airblade/vim-gitgutter'     " Git status on gutter
+Plugin 'tpope/vim-surround'         " HTML tag surrounding
+Plugin 'vim-scripts/matchit.zip'    " Match stuff with %
+Plugin 'bling/vim-airline'          " Fancy statusline
+Plugin 'scrooloose/syntastic'       " Polyglot lint tool
+Plugin 'morhetz/gruvbox'            " Color theme
+Plugin 'danro/rename.vim'           " Easy file renaming
+Plugin 'emilsoman/spec-outline.vim' " Spec outlines for spec files
+Plugin 'godlygeek/tabular'          " Tabular text alignment
+Plugin 'emilsoman/test-runner.vim'  " Test runner shortcuts
+
+filetype on
