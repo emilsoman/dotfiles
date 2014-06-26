@@ -40,7 +40,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx bundler lein per-directory-history)
+plugins=(git osx lein per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
@@ -52,9 +52,7 @@ PATH=$PATH:$HOME/Tools/bin # Add custom tools bin
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh # Use NVM for node version management
 
-bindkey "[D" backward-word
-bindkey "[C" forward-word
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
-
 ~/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh
+
+# To use Direnv with zsh
+eval "$(direnv hook zsh)"

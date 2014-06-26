@@ -32,6 +32,7 @@ set directory=~/.vim/tmp    " Use global swap directory
 set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
+set t_ut=                   " Disable background color erase
 
 " Use 2 spaces for tab
 set tabstop=2
@@ -59,8 +60,13 @@ highlight ColorColumn ctermbg=234
 
 " Show line cursor in insert mode
 " and block cursor in normal mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " Disable error bells
 set noerrorbells visualbell t_vb=
@@ -102,8 +108,12 @@ colors gruvbox
 "colors mustang
 "colors molokai
 
-" Custom shortcuts
+" Customized shitz
 " ================
+
+" Treat .md as markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 

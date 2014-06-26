@@ -3,27 +3,11 @@
 name: rails
 root: .
 
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: byobu
-
 windows:
-  #- editor:
-      #layout: even-horizontal
-      #panes:
-        #- vim
-        #- vim
-  - zeus: zeus start
-  - server: zeus s
-  - console: zeus c
+  - editor:
+      layout: 48b5,178x45,0,0[178x9,0,0{89x9,0,0,0,88x9,90,0,4},178x21,0,10,2,178x13,0,32,3]
+      panes:
+        - zeus start
+        - waitforfile .zeus.sock && zeus s
+        - waitforfile .zeus.sock && zeus c
+        - tail -100f log/development.log

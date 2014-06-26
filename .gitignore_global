@@ -10,3 +10,8 @@
 /.rubocop.yml
 /tags
 /.agignore
+/custom_plan.rb
+/zeus.json
+/invoker.ini
+/.envrc
+/.DS_Store
