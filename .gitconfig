@@ -10,6 +10,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
 [alias]
   unstage = reset HEAD
   lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -27,3 +28,5 @@
   default = simple
 [diff]
   noprefix = true
+[filter "gitignorez"]
+  clean=awk '!/GITIGNOREZ/' %f
