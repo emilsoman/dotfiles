@@ -27,5 +27,8 @@ Plugin 'danro/rename.vim'           " Easy file renaming
 Plugin 'emilsoman/spec-outline.vim' " Spec outlines for spec files
 Plugin 'godlygeek/tabular'          " Tabular text alignment
 Plugin 'emilsoman/test-runner.vim'  " Test runner shortcuts
+Plugin 'junegunn/goyo.vim'          " Zen mode editing
+Plugin 'regedarek/ZoomWin'          " Zoom in and out of windows
+"Plugin 'emilsoman/indent-highlight.vim' " Highlight current block
 
 filetype on

@@ -15,3 +15,5 @@
 /invoker.ini
 /.envrc
 /.DS_Store
+/nohup.out
+/mongodb

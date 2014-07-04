@@ -162,3 +162,5 @@ abbr st /^ "([^"]*)"  $/
 "imap jk <Esc>
 "imap kj  <Esc>
 "nnoremap ; :
+
+"set rtp+=$HOME/OpenSource/indent-highlight.vim

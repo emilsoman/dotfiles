@@ -51,6 +51,7 @@ PATH=$PATH:$HOME/Tools/bin # Add custom tools bin
 
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh # Use NVM for node version management
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 ~/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh
 
