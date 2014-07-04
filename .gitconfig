@@ -1,15 +1,15 @@
 [user]
-	name = Emil Soman
-	email = emil.soman@gmail.com
+  name = Emil Soman
+  email = emil.soman@gmail.com
 [credential]
-	helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [color]
-	ui = auto
+  ui = auto
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 [alias]
   unstage = reset HEAD
   lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -21,9 +21,9 @@
   masterdiff = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
   diffr  = "!f() { git diff "$1"^.."$1"; }; f"
 [github]
-	user = emilsoman
-	password = password
+  user = emilsoman
+  password = password
 [push]
-	default = simple
+  default = simple
 [diff]
-	noprefix = true
+  noprefix = true
