@@ -71,3 +71,17 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " =====================
 let g:goyo_linenr = 1
 nnoremap <Leader>z :Goyo<CR>
+
+" SmoothScroll
+" ============
+noremap <silent> <unique> <c-u> :call smooth_scroll#up(&scroll, 12, 1)<CR>
+noremap <silent> <unique> <c-d> :call smooth_scroll#down(&scroll, 12, 1)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+" Gundo
+" =====
+nnoremap <leader>u :GundoToggle<CR>
+let g:gundo_right = 1
+let g:gundo_map_move_older = '<Down>'
+let g:gundo_map_move_newer = '<Up>'
