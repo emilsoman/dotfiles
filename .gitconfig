@@ -28,5 +28,3 @@
   default = simple
 [diff]
   noprefix = true
-[filter "gitignorez"]
-  clean=awk '!/GITIGNOREZ/' %f
