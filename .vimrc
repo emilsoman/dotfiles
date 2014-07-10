@@ -150,6 +150,10 @@ nnoremap <Leader>/ :set hls!<CR>
 " Tabularize shortcut
 vnoremap <Leader>t :Tabularize /
 
+" Fuzzy search all open buffers
+" using C-/. Yes, C-/ !!!
+nmap <unique> <c-_> :CtrlPLine<CR>
+
 " Abbreviations
 abbr dbg require 'debugger'; debugger
 abbr pryy require 'pry'; binding.pry

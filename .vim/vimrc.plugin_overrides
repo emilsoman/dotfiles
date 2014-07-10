@@ -85,3 +85,7 @@ nnoremap <leader>u :GundoToggle<CR>
 let g:gundo_right = 1
 let g:gundo_map_move_older = '<Down>'
 let g:gundo_map_move_newer = '<Up>'
+
+" vim-easymotion
+" ==============
+map <unique> <Leader><Space> <Plug>(easymotion-prefix)
