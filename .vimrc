@@ -154,6 +154,9 @@ vnoremap <Leader>t :Tabularize /
 " using C-/. Yes, C-/ !!!
 nmap <unique> <c-_> :CtrlPLine<CR>
 
+" Indent current block
+nmap <unique> <leader>a ma=ip`a
+
 " Abbreviations
 abbr dbg require 'debugger'; debugger
 abbr pryy require 'pry'; binding.pry
