@@ -157,6 +157,12 @@ nmap <unique> <c-_> :CtrlPLine<CR>
 " Indent current block
 nmap <unique> <leader>a ma=ip`a
 
+" Search using easymotion
+map / <Plug>(easymotion-sn)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
+map s <Plug>(easymotion-s2)
+
 " Abbreviations
 abbr dbg require 'debugger'; debugger
 abbr pryy require 'pry'; binding.pry

@@ -33,8 +33,6 @@ Plugin 'emilsoman/indent-highlight.vim'  " Highlight current block
 Plugin 'terryma/vim-smooth-scroll'       " Smooth scrolling
 Plugin 'sjl/gundo.vim'                   " Visualize undo tree
 Plugin 'Lokaltog/vim-easymotion'         " Easily move around text
-Plugin 'junegunn/vim-pseudocl'           " Dependency of vim-oblique
-Plugin 'junegunn/vim-oblique'            " Better / search (has fuzzy)
 Plugin 'ConradIrwin/vim-bracketed-paste' " No more se paste
 
 filetype on
