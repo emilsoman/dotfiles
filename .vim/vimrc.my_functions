@@ -1,0 +1,11 @@
+" Toggle relative/absolute line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+if !exists(":NumberToggle")
+  command NumberToggle  :call NumberToggle()
+endif

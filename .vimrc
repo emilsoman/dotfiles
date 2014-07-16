@@ -16,6 +16,7 @@ set lazyredraw              " Don't update the display while executing macros
 set showmode                " Show current mode
 set nowrap                  " Do not wrap text
 set number                  " Show line numbers
+set relativenumber          " Show relative line numbers
 set hls                     " Highlight searches
 set ic                      " Ignore case
 set smartcase               " Use case when searching with cases
@@ -107,6 +108,13 @@ colors gruvbox
 "colors zenburn
 "colors mustang
 "colors molokai
+
+
+" Some helper functions
+" =====================
+if filereadable(expand("~/.vim/vimrc.my_functions"))
+  source ~/.vim/vimrc.my_functions
+endif
 
 " Custom maps and abbreviations
 " =============================
