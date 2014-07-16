@@ -9,6 +9,7 @@
 /Notes.*
 /.rubocop.yml
 /tags
+/ext/tags
 /.agignore
 /custom_plan.rb
 /zeus.json

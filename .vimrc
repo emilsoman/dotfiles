@@ -108,8 +108,8 @@ colors gruvbox
 "colors mustang
 "colors molokai
 
-" Customized shitz
-" ================
+" Custom maps and abbreviations
+" =============================
 
 " Treat .md as markdown files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -157,11 +157,10 @@ nmap <unique> <c-_> :CtrlPLine<CR>
 " Indent current block
 nmap <unique> <leader>a ma=ip`a
 
-" Search using easymotion
-map / <Plug>(easymotion-sn)
-map n <Plug>(easymotion-next)
-map N <Plug>(easymotion-prev)
+" Quick 2 character search using easymotion
+map s <Plug>(easymotion-s)
 map s <Plug>(easymotion-s2)
+map <Leader><Space>/ <Plug>(easymotion-sn)
 
 " Abbreviations
 abbr dbg require 'debugger'; debugger
@@ -170,6 +169,13 @@ abbr sph require 'spec_helper'
 "Cucumber regex abbrs
 abbr mq "([^"]*)"
 abbr st /^ "([^"]*)"  $/
+
+" This is how I roll
+" ==================
+nnoremap h :echo "You're so two-thousand and late"<cr>
+nnoremap j :echo "You're so two-thousand and late"<cr>
+nnoremap k :echo "You're so two-thousand and late"<cr>
+nnoremap l :echo "You're so two-thousand and late"<cr>
 
 " Kashyap's extra bindings for pairing
 "imap jk <Esc>

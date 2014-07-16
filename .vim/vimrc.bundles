@@ -34,5 +34,6 @@ Plugin 'terryma/vim-smooth-scroll'       " Smooth scrolling
 Plugin 'sjl/gundo.vim'                   " Visualize undo tree
 Plugin 'Lokaltog/vim-easymotion'         " Easily move around text
 Plugin 'ConradIrwin/vim-bracketed-paste' " No more se paste
+Plugin 'Raimondi/delimitMate'            " Autoclose parens and quotes
 
 filetype on
