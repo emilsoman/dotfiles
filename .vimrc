@@ -34,6 +34,7 @@ set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
 set t_ut=                   " Disable background color erase
+set synmaxcol=80            " Don't syn-highlight characters after 80 columns
 
 " Use 2 spaces for tab
 set tabstop=2
@@ -119,9 +120,6 @@ endif
 " Custom maps and abbreviations
 " =============================
 
-" Treat .md as markdown files
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -149,8 +147,11 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 
 " Copy/Paste to/from clipboard
-vnoremap <Leader>y "*y
-nnoremap <Leader>p "*p
+vmap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " Toggle search highlights
 nnoremap <Leader>/ :set hls!<CR>
@@ -170,10 +171,22 @@ map s <Plug>(easymotion-s)
 map s <Plug>(easymotion-s2)
 map <Leader><Space>/ <Plug>(easymotion-sn)
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Use tab to jump to closing/opening matches
+nnoremap <tab> %
+
+" Some love for emacsfags
+inoremap <C-e> <esc>A
+inoremap <C-a> <esc>I
+
 " Abbreviations
 abbr dbg require 'debugger'; debugger
 abbr pryy require 'pry'; binding.pry
 abbr sph require 'spec_helper'
+abbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
 "Cucumber regex abbrs
 abbr mq "([^"]*)"
 abbr st /^ "([^"]*)"  $/
@@ -190,4 +203,4 @@ nnoremap l :echo "You're so two-thousand and late"<cr>
 "imap kj  <Esc>
 "nnoremap ; :
 
-"set rtp+=$HOME/OpenSource/indent-highlight.vim
+"set rtp+=$HOME/OpenSource/open-github-commit.vim

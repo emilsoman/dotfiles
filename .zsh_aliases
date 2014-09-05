@@ -8,7 +8,8 @@ export CURRENT_PROJECT_PATH='~/Workspace/welend'
 export NOEXEC_DISABLE=1
 
 alias vi='/usr/local/bin/vim'
-export EDITOR='vi'
+export EDITOR='vim'
+export RBKIT_DEV=true
 #alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
 #alias sq='mysql -u root -proot'
 alias gitlog='git log --name-status'
@@ -32,7 +33,11 @@ alias todo="grep -r 'OPTIMIZE\|FIXME\|TODO' *"
 alias clipboard='xclip -sel clip'
 alias journal="$EDITOR ~/Workspace/Tasks/$(date +%F).md"
 alias tcplisten="lsof -iTCP -sTCP:LISTEN"
-alias rtags="ctags -R --languages=ruby,coffee --exclude=.git --exclude=log --exclude=vendor"
+alias rtags="ctags -R --languages=ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
+alias ctags="ctags -R --languages=c,ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
+alias be="bundle exec"
+alias vimrc="vi ~/.vimrc"
+alias vimbundle="vi ~/.vim/vimrc.bundles"
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'
@@ -43,6 +48,7 @@ alias hmer='cd ~/Personal/homer && clear && pwd'
 alias testing='cd ~/Testing && clear && pwd'
 alias bisl='cd ~/Personal/bisleri && clear && pwd'
 alias oss='cd ~/OpenSource && clear && pwd'
+alias rbkit='cd ~/OpenSource/rbkit && clear && pwd'
 alias precommit=".git/hooks/pre-commit"
 alias dotfiles="personal && cd dotfiles"
 

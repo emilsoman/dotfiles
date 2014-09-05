@@ -1,0 +1,11 @@
+name: rbkit
+root: /Users/emil/OpenSource/rbkit
+
+
+windows:
+  - editor:
+      layout: e475,178x45,0,0{72x45,0,0[72x22,0,0,6,72x22,0,23,7],105x45,73,0,8}
+      panes:
+        - ruby experiments/using_rbkit.rb
+        - be ruby experiments/rbkit_command_test.rb
+        - tail -f /tmp/rbkit.log

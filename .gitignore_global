@@ -19,3 +19,4 @@
 /nohup.out
 /mongodb
 /*.dump
+.DS_Store

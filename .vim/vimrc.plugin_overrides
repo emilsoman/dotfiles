@@ -59,6 +59,9 @@ let g:ycm_key_list_previous_completion=['<Up>']
 " Autocomplete using words from comments and strings
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " vim-ruby
 " ========
@@ -76,8 +79,6 @@ nnoremap <Leader>z :Goyo<CR>
 " ============
 noremap <silent> <unique> <c-u> :call smooth_scroll#up(&scroll, 12, 1)<CR>
 noremap <silent> <unique> <c-d> :call smooth_scroll#down(&scroll, 12, 1)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " Gundo
 " =====
@@ -89,3 +90,25 @@ let g:gundo_map_move_newer = '<Up>'
 " vim-easymotion
 " ==============
 map <unique> <Leader><Space> <Plug>(easymotion-prefix)
+
+" vim-markdown
+" ============
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_no_default_key_mappings=1
+
+" rainbow_parenthesis.vim
+" =======================
+au FileType clojure RainbowParenthesesActivate
+au syntax clojure RainbowParenthesesLoadRound
+au syntax clojure RainbowParenthesesLoadSquare
+au syntax clojure RainbowParenthesesLoadBraces
+
+" YankRing.vim
+" ============
+let g:yankring_replace_n_pkey = '<leader>pp'
+let g:yankring_replace_n_nkey = '<leader>pn'
+
+" vim-expand-region
+" =================
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
