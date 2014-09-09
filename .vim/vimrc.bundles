@@ -40,6 +40,7 @@ Plugin 'AndrewRadev/splitjoin.vim'        " gJ and gS to join and split blocks
 Plugin 'AndrewRadev/linediff.vim'         " Diff 2 blocks of text
 Plugin 'terryma/vim-expand-region'        " Expand(v)/shrink(C-v) vis selection
 Plugin 'emilsoman/open-github-commit.vim' " Opens current line's commit in gh
+Plugin 'shinokada/dragvisuals.vim'        " Drag visual selections
 
 " Stuff for clojure
 " =================
