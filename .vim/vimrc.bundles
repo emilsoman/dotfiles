@@ -41,6 +41,7 @@ Plugin 'AndrewRadev/linediff.vim'         " Diff 2 blocks of text
 Plugin 'terryma/vim-expand-region'        " Expand(v)/shrink(C-v) vis selection
 Plugin 'emilsoman/open-github-commit.vim' " Opens current line's commit in gh
 Plugin 'shinokada/dragvisuals.vim'        " Drag visual selections
+Plugin 'nixon/vim-vmath'                  " Math summary for visual selections
 
 " Stuff for clojure
 " =================

@@ -120,6 +120,10 @@ endif
 " Custom maps and abbreviations
 " =============================
 
+" Save 3 days every 10 years
+nnoremap <C-a> <Esc>:update<CR>
+inoremap <C-a> <c-o>:update<CR>
+
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -178,18 +182,18 @@ nnoremap N Nzzzv
 " Use tab to jump to closing/opening matches
 nnoremap <tab> %
 
-" Some love for emacsfags
-inoremap <C-e> <esc>A
-inoremap <C-a> <esc>I
+" Jump to end or beginning in insert mode
+inoremap <C-Right> <esc>A
+inoremap <C-Left> <esc>I
 
 " Abbreviations
-abbr dbg require 'debugger'; debugger
-abbr pryy require 'pry'; binding.pry
-abbr sph require 'spec_helper'
-abbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
+iabbr dbg require 'debugger'; debugger
+iabbr pryy require 'pry'; binding.pry
+iabbr sph require 'spec_helper'
+iabbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
 "Cucumber regex abbrs
-abbr mq "([^"]*)"
-abbr st /^ "([^"]*)"  $/
+iabbr mq "([^"]*)"
+iabbr st /^ "([^"]*)"  $/
 
 " This is how I roll
 " ==================
