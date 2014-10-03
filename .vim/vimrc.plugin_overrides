@@ -90,6 +90,7 @@ let g:gundo_map_move_newer = '<Up>'
 " vim-easymotion
 " ==============
 map <unique> <Leader><Space> <Plug>(easymotion-prefix)
+let g:EasyMotion_smartcase = 1
 
 " vim-markdown
 " ============

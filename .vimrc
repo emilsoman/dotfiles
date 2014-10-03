@@ -34,7 +34,7 @@ set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
 set t_ut=                   " Disable background color erase
-set synmaxcol=80            " Don't syn-highlight characters after 80 columns
+set synmaxcol=300           " Don't syn-highlight characters after 300 columns
 
 " Use 2 spaces for tab
 set tabstop=2
