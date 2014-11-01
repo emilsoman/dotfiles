@@ -1,0 +1,2 @@
+local rvm_ruby='%{$fg[red]%}$(rvm_prompt_info || rbenv_prompt_info)%{$reset_color%}'
+RPROMPT="${rvm_ruby}|%*"

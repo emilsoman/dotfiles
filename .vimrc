@@ -110,7 +110,6 @@ colors gruvbox
 "colors mustang
 "colors molokai
 
-
 " Some helper functions
 " =====================
 if filereadable(expand("~/.vim/vimrc.my_functions"))
@@ -121,8 +120,8 @@ endif
 " =============================
 
 " Save 3 days every 10 years
-nnoremap <C-a> <Esc>:update<CR>
-inoremap <C-a> <c-o>:update<CR>
+nnoremap <C-s> <Esc>:update<CR>
+inoremap <C-s> <c-o>:update<CR>
 
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %

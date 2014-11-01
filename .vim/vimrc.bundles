@@ -23,12 +23,9 @@ Plugin 'bling/vim-airline'                " Fancy statusline
 Plugin 'scrooloose/syntastic'             " Polyglot lint tool
 Plugin 'morhetz/gruvbox'                  " Color theme
 Plugin 'danro/rename.vim'                 " Easy file renaming
-Plugin 'emilsoman/spec-outline.vim'       " Spec outlines for spec files
 Plugin 'godlygeek/tabular'                " Tabular text alignment
-Plugin 'emilsoman/test-runner.vim'        " Test runner shortcuts
 Plugin 'junegunn/goyo.vim'                " Zen mode editing
 Plugin 'regedarek/ZoomWin'                " Zoom in and out of windows
-Plugin 'emilsoman/indent-highlight.vim'   " Highlight current block
 Plugin 'terryma/vim-smooth-scroll'        " Smooth scrolling
 Plugin 'sjl/gundo.vim'                    " Visualize undo tree
 Plugin 'Lokaltog/vim-easymotion'          " Easily move around text
@@ -39,9 +36,17 @@ Plugin 'YankRing.vim'                     " Yank history
 Plugin 'AndrewRadev/splitjoin.vim'        " gJ and gS to join and split blocks
 Plugin 'AndrewRadev/linediff.vim'         " Diff 2 blocks of text
 Plugin 'terryma/vim-expand-region'        " Expand(v)/shrink(C-v) vis selection
-Plugin 'emilsoman/open-github-commit.vim' " Opens current line's commit in gh
 Plugin 'shinokada/dragvisuals.vim'        " Drag visual selections
 Plugin 'nixon/vim-vmath'                  " Math summary for visual selections
+Plugin 'bruno-/vim-husk'                  " Bash mappings in Vim command mode
+Plugin 'Yggdroot/indentLine'
+
+"My plugins
+Plugin 'emilsoman/open-github-commit.vim' " Opens current line's commit in gh
+Plugin 'emilsoman/spec-outline.vim'       " Spec outlines for spec files
+Plugin 'emilsoman/test-runner.vim'        " Test runner shortcuts
+Plugin 'emilsoman/indent-highlight.vim'   " Highlight current block
+
 
 " Stuff for clojure
 " =================
