@@ -44,12 +44,12 @@ plugins=(git osx lein per-directory-history vundle)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
+source $HOME/.zsh_theme
 
 # Customize to your needs...
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH=$PATH:$HOME/Tools/bin # Add custom tools bin
 
-PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh # Use NVM for node version management
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 PATH=$PATH:/Users/emil/Tools/ADT-bundle/sdk/platform-tools:/Users/emil/Tools/ADT-bundle/sdk/tools
@@ -58,3 +58,5 @@ PATH=$PATH:/Users/emil/Tools/ADT-bundle/sdk/platform-tools:/Users/emil/Tools/ADT
 
 # To use Direnv with zsh
 eval "$(direnv hook zsh)"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
