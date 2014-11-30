@@ -5,53 +5,54 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 " Define bundles via Github repos
-Plugin 'rking/ag.vim'                     " silver searcher in vim
-Plugin 'kien/ctrlp.vim'                   " Fuzzy file finder
-Plugin 'scrooloose/nerdcommenter'         " Comment & uncomment
+Plugin 'rking/ag.vim'                        " silver searcher in vim
+Plugin 'kien/ctrlp.vim'                      " Fuzzy file finder
+Plugin 'scrooloose/nerdcommenter'            " Comment & uncomment
 
-Plugin 'vim-ruby/vim-ruby'                " Ruby autocomplete etc
-Plugin 'Valloric/YouCompleteMe'           " Autocompletion
-Plugin 'SirVer/ultisnips'                 " Autocomplete snippets
-Plugin 'honza/vim-snippets'               " LOADS of snippets
+Plugin 'vim-ruby/vim-ruby'                   " Ruby autocomplete etc
+Plugin 'Valloric/YouCompleteMe'              " Autocompletion
+Plugin 'SirVer/ultisnips'                    " Autocomplete snippets
+Plugin 'honza/vim-snippets'                  " LOADS of snippets
 
-Plugin 'kchmck/vim-coffee-script'         " Coffee filetype
-Plugin 'tpope/vim-endwise'                " Auto insert 'end' in ruby
-Plugin 'tpope/vim-fugitive'               " Gblame and Gdiff FTW
-Plugin 'airblade/vim-gitgutter'           " Git status on gutter
-Plugin 'vim-scripts/matchit.zip'          " Match stuff with %
-Plugin 'bling/vim-airline'                " Fancy statusline
-Plugin 'scrooloose/syntastic'             " Polyglot lint tool
-Plugin 'morhetz/gruvbox'                  " Color theme
-Plugin 'danro/rename.vim'                 " Easy file renaming
-Plugin 'godlygeek/tabular'                " Tabular text alignment
-Plugin 'junegunn/goyo.vim'                " Zen mode editing
-Plugin 'regedarek/ZoomWin'                " Zoom in and out of windows
-Plugin 'terryma/vim-smooth-scroll'        " Smooth scrolling
-Plugin 'sjl/gundo.vim'                    " Visualize undo tree
-Plugin 'Lokaltog/vim-easymotion'          " Easily move around text
-Plugin 'ConradIrwin/vim-bracketed-paste'  " No more se paste
-Plugin 'Raimondi/delimitMate'             " Autoclose parens and quotes
-Plugin 'plasticboy/vim-markdown'          " Markdown highlighting
-Plugin 'YankRing.vim'                     " Yank history
-Plugin 'AndrewRadev/splitjoin.vim'        " gJ and gS to join and split blocks
-Plugin 'AndrewRadev/linediff.vim'         " Diff 2 blocks of text
-Plugin 'terryma/vim-expand-region'        " Expand(v)/shrink(C-v) vis selection
-Plugin 'shinokada/dragvisuals.vim'        " Drag visual selections
-Plugin 'nixon/vim-vmath'                  " Math summary for visual selections
-Plugin 'bruno-/vim-husk'                  " Bash mappings in Vim command mode
-Plugin 'Yggdroot/indentLine'
+Plugin 'kchmck/vim-coffee-script'            " Coffee filetype
+Plugin 'tpope/vim-endwise'                   " Auto insert 'end' in ruby
+Plugin 'tpope/vim-fugitive'                  " Gblame and Gdiff FTW
+Plugin 'airblade/vim-gitgutter'              " Git status on gutter
+Plugin 'vim-scripts/matchit.zip'             " Match stuff with %
+Plugin 'bling/vim-airline'                   " Fancy statusline
+Plugin 'scrooloose/syntastic'                " Polyglot lint tool
+Plugin 'morhetz/gruvbox'                     " Color theme
+Plugin 'danro/rename.vim'                    " Easy file renaming
+Plugin 'godlygeek/tabular'                   " Tabular text alignment
+Plugin 'junegunn/goyo.vim'                   " Zen mode editing
+Plugin 'regedarek/ZoomWin'                   " Zoom in and out of windows
+Plugin 'terryma/vim-smooth-scroll'           " Smooth scrolling
+Plugin 'sjl/gundo.vim'                       " Visualize undo tree
+Plugin 'Lokaltog/vim-easymotion'             " Easily move around text
+Plugin 'ConradIrwin/vim-bracketed-paste'     " No more se paste
+Plugin 'Raimondi/delimitMate'                " Autoclose parens and quotes
+Plugin 'plasticboy/vim-markdown'             " Markdown highlighting
+Plugin 'YankRing.vim'                        " Yank history
+Plugin 'AndrewRadev/splitjoin.vim'           " gJ and gS to join and split blocks
+Plugin 'AndrewRadev/linediff.vim'            " Diff 2 blocks of text
+Plugin 'terryma/vim-expand-region'           " Expand(v)/shrink(C-v) vis selection
+Plugin 'shinokada/dragvisuals.vim'           " Drag visual selections
+Plugin 'nixon/vim-vmath'                     " Math summary for visual selections
+Plugin 'bruno-/vim-husk'                     " Bash mappings in Vim command mode
+Plugin 'Yggdroot/indentLine'                 " Shows vertical indentation lines
+Plugin 'haya14busa/incsearch.vim'            " Incremental searches
 
-"My plugins
-Plugin 'emilsoman/open-github-commit.vim' " Opens current line's commit in gh
-Plugin 'emilsoman/spec-outline.vim'       " Spec outlines for spec files
-Plugin 'emilsoman/test-runner.vim'        " Test runner shortcuts
-Plugin 'emilsoman/indent-highlight.vim'   " Highlight current block
+" My plugins
+Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh
+Plugin 'emilsoman/spec-outline.vim'          " Spec outlines for spec files
+Plugin 'emilsoman/test-runner.vim'           " Test runner shortcuts
+Plugin 'emilsoman/indent-highlight.vim'      " Highlight current block
+Plugin 'emilsoman/my-filetype-overrides.vim' " Filetype specific vimfu
 
 
 " Stuff for clojure
 " =================
-Plugin 'tpope/vim-fireplace'              " Repl integration from vim
-Plugin 'kien/rainbow_parentheses.vim'     " Multicolored parens
-Plugin 'paredit.vim'                      " Better paren support for lisp
+Plugin 'tpope/vim-fireplace'                 " Repl integration from vim
+Plugin 'kien/rainbow_parentheses.vim'        " Multicolored parens
 
 filetype on

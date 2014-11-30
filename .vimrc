@@ -172,7 +172,12 @@ nmap <unique> <leader>a ma=ip`a
 " Quick 2 character search using easymotion
 map s <Plug>(easymotion-s)
 map s <Plug>(easymotion-s2)
-map <Leader><Space>/ <Plug>(easymotion-sn)
+map g/ <Plug>(easymotion-sn)
+
+" Incremental search
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map n/ <Plug>(incsearch-stay)
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv

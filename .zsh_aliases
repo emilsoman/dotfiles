@@ -51,6 +51,9 @@ alias oss='cd ~/OpenSource && clear && pwd'
 alias rbkit='cd ~/OpenSource/rbkit && clear && pwd'
 alias precommit=".git/hooks/pre-commit"
 alias dotfiles="personal && cd dotfiles"
+alias of="cd ~/Personal/of_v0.8.4_osx_release && clear && pwd"
+alias ofs="cd ~/Personal/of_v0.8.4_osx_release/apps/myApps && clear && pwd"
+alias gcrc="~/Personal/GCRC2015"
 
 #Tmux shortcuts
 alias tkill='tmux kill-session'
