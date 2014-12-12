@@ -38,6 +38,7 @@ alias ctags="ctags -R --languages=c,ruby,coffee --exclude=.git --exclude=log --e
 alias be="bundle exec"
 alias vimrc="vi ~/.vimrc"
 alias vimbundle="vi ~/.vim/vimrc.bundles"
+alias z="zeus"
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'

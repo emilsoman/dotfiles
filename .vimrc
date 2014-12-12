@@ -177,7 +177,6 @@ map g/ <Plug>(easymotion-sn)
 " Incremental search
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
-map n/ <Plug>(incsearch-stay)
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
