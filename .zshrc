@@ -60,3 +60,4 @@ PATH=$PATH:/Users/emil/Tools/ADT-bundle/sdk/platform-tools:/Users/emil/Tools/ADT
 eval "$(direnv hook zsh)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
