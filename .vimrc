@@ -122,6 +122,7 @@ endif
 " Save 3 days every 10 years
 nnoremap <C-s> <Esc>:update<CR>
 inoremap <C-s> <c-o>:update<CR>
+nnoremap <Leader>q <Esc>:q<CR>
 
 " Allow saving of files as sudo when I forget to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -193,6 +194,7 @@ inoremap <C-Left> <esc>I
 iabbr dbg require 'debugger'; debugger
 iabbr pryy require 'pry'; binding.pry
 iabbr sph require 'spec_helper'
+iabbr rah require 'rails_helper'
 iabbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
 "Cucumber regex abbrs
 iabbr mq "([^"]*)"
