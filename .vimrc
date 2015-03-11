@@ -87,6 +87,8 @@ highlight Pmenu ctermbg=238 gui=bold
 " Remove delay after pressing escape and clearing the visual selection
 set timeoutlen=1000 ttimeoutlen=0
 
+" Turn on spellcheck in markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Plugin config overrides
 " =======================
