@@ -35,6 +35,7 @@ set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
 set t_ut=                   " Disable background color erase
 set synmaxcol=300           " Don't syn-highlight characters after 300 columns
+set nojoinspaces            " Use only 1 space after "." when joining lines
 
 " Use 2 spaces for tab
 set tabstop=2
