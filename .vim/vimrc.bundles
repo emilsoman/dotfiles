@@ -41,6 +41,7 @@ Plugin 'nixon/vim-vmath'                     " Math summary for visual selection
 Plugin 'bruno-/vim-husk'                     " Bash mappings in Vim command mode
 Plugin 'Yggdroot/indentLine'                 " Shows vertical indentation lines
 Plugin 'haya14busa/incsearch.vim'            " Incremental searches
+Plugin 'benmills/vimux'                      " Send commands to tmux
 
 " My plugins
 Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh

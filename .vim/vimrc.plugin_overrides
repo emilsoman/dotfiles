@@ -126,3 +126,8 @@ vmap  <expr>  D          DVB_Duplicate()
 " =========
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
+
+" test-runner.vim
+" ===============
+noremap <silent> <Leader>R :call TestRunnerRunAllTests()<CR>
+noremap <silent> <Leader>r :call TestRunnerRunCurrentTest()<CR>
