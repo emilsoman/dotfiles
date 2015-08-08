@@ -5,3 +5,4 @@ Installation
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
 Open VIM and run `:PluginInstall`
+Open iTerm preferences and load preferences from `./iterm2` directory

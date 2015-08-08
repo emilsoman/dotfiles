@@ -2,14 +2,13 @@
 # MY BASH ALIASES
 #
 #Current Project Path here :
-export CURRENT_PROJECT_PATH='~/Workspace/welend'
+export CURRENT_PROJECT_PATH='~/Workspace/turbo'
 
 #Dont use rubygems-bundler that always assumes you want to 'bundle exec' everything
 export NOEXEC_DISABLE=1
 
 alias vi='/usr/local/bin/vim'
 export EDITOR='vim'
-export RBKIT_DEV=true
 #alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
 #alias sq='mysql -u root -proot'
 alias gitlog='git log --name-status'
@@ -39,6 +38,7 @@ alias be="bundle exec"
 alias vimrc="vi ~/.vimrc"
 alias vimbundle="vi ~/.vim/vimrc.bundles"
 alias z="zeus"
+alias gdc=gdca
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'
@@ -55,6 +55,11 @@ alias dotfiles="personal && cd dotfiles"
 alias of="cd ~/Personal/of_v0.8.4_osx_release && clear && pwd"
 alias ofs="cd ~/Personal/of_v0.8.4_osx_release/apps/myApps && clear && pwd"
 alias gcrc="~/Personal/GCRC2015"
+alias talk="cd ~/Personal/DIY_CPU_Profiler && clear"
 
 #Tmux shortcuts
 alias tkill='tmux kill-session'
+alias talk_tmux_host='tmux new -s talk'
+alias talk_tmux_client='tmux attach -t talk'
+
+alias rbkit-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --load-extension=/Users/emil/Testing/rbkit-chrome --user-data-dir=$(mktemp -d -t chrome)'

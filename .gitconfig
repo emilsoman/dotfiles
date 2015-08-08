@@ -7,6 +7,7 @@
   ui = auto
 [merge]
   conflictstyle = diff3
+  tool = vimdiff3
 [core]
   editor = vim
   excludesfile = ~/.gitignore
@@ -28,3 +29,5 @@
   default = simple
 [diff]
   noprefix = true
+[mergetool "vimdiff3"]
+  cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

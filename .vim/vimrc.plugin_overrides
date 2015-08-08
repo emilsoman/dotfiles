@@ -37,11 +37,14 @@ endif
   "\ }
 " Do not clear ctrlp cache when vim exits
 let g:ctrlp_clear_cache_on_exit = 0
+" CtrlP should index CWD
+let g:ctrlp_working_path_mode = 0
 
 
 " Syntastic
 " =========
 let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 
 " UltiSnips

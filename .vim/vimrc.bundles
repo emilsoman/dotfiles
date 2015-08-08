@@ -6,7 +6,7 @@ Plugin 'gmarik/vundle'
 
 " Define bundles via Github repos
 Plugin 'rking/ag.vim'                        " silver searcher in vim
-Plugin 'kien/ctrlp.vim'                      " Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'                  " Fuzzy file finder
 Plugin 'scrooloose/nerdcommenter'            " Comment & uncomment
 
 Plugin 'vim-ruby/vim-ruby'                   " Ruby autocomplete etc
@@ -42,6 +42,9 @@ Plugin 'bruno-/vim-husk'                     " Bash mappings in Vim command mode
 Plugin 'Yggdroot/indentLine'                 " Shows vertical indentation lines
 Plugin 'haya14busa/incsearch.vim'            " Incremental searches
 Plugin 'benmills/vimux'                      " Send commands to tmux
+Plugin 'zerowidth/vim-copy-as-rtf'           " Copy syntax highlighted text
+Plugin 'digitaltoad/vim-jade'                " Jade syntax highlighting
+Plugin 'editorconfig/editorconfig-vim'       " For consistent styles within projects
 
 " My plugins
 Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh

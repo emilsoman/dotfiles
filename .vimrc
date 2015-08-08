@@ -33,6 +33,7 @@ set directory=~/.vim/tmp    " Use global swap directory
 set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
+"set shell=/usr/local/bin/zsh         " Let's try using zsh
 set t_ut=                   " Disable background color erase
 set synmaxcol=300           " Don't syn-highlight characters after 300 columns
 set nojoinspaces            " Use only 1 space after "." when joining lines
@@ -152,6 +153,9 @@ nnoremap <Leader>6 :6b<CR>
 nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
+
+" Shows cursor line and column
+command TalkModeToggle  :call TalkModeToggle()
 
 " Copy/Paste to/from clipboard
 vmap <Leader>y "+y

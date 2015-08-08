@@ -9,3 +9,16 @@ endfunc
 if !exists(":NumberToggle")
   command NumberToggle  :call NumberToggle()
 endif
+
+function! TalkModeToggle()
+  if get(g:, 'talkmode', 0)
+    set nocursorcolumn
+    set nocursorline
+    let g:talkmode = 0
+  else
+    set cursorcolumn
+    set cursorline
+    let g:talkmode = 1
+  endif
+
+endfunction

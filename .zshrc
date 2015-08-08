@@ -1,3 +1,4 @@
+echo "Loading ~/.zshrc"
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -54,10 +55,11 @@ source ~/.nvm/nvm.sh # Use NVM for node version management
 PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 PATH=$PATH:/Users/emil/Tools/ADT-bundle/sdk/platform-tools:/Users/emil/Tools/ADT-bundle/sdk/tools
 
-~/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh
+source ~/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh
 
 # To use Direnv with zsh
 eval "$(direnv hook zsh)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

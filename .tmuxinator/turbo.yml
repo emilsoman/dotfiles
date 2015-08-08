@@ -1,0 +1,14 @@
+# ~/.tmuxinator/rails.yml
+
+name: rails
+root: .
+
+windows:
+  - dash:
+      layout: 48b5,178x45,0,0[178x9,0,0{89x9,0,0,0,88x9,90,0,4},178x21,0,10,2,178x13,0,32,3]
+      panes:
+        - redis-server redis.conf && waitforfile redis.pid && zeus start
+        - waitforfile .zeus.sock && zeus s
+        - waitforfile .zeus.sock && zeus c
+        - tail -100f log/development.log
+  - editor: vim

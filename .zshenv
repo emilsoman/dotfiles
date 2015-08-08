@@ -1,1 +1,2 @@
-source ~/.zshrc
+echo "Loading ~/.zshenv"
+#source ~/.zshrc
