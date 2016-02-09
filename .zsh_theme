@@ -1,2 +1,8 @@
-local rvm_ruby='%{$fg[red]%}$(rvm_prompt_info || rbenv_prompt_info)%{$reset_color%}'
-RPROMPT="${rvm_ruby}|%*"
+### RVM
+ZSH_THEME_RVM_PROMPT_PREFIX="%{$fg[red]%}💎 "
+ZSH_THEME_RVM_PROMPT_SUFFIX="%{$reset_color%}"
+
+### NVM
+ZSH_THEME_NVM_PROMPT_PREFIX="|%{$fg[green]%}⬡ "
+ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}"
+RPROMPT="$(ruby_prompt_info)$(nvm_prompt_info)|%*"

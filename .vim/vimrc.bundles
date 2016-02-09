@@ -45,6 +45,8 @@ Plugin 'benmills/vimux'                      " Send commands to tmux
 Plugin 'zerowidth/vim-copy-as-rtf'           " Copy syntax highlighted text
 Plugin 'digitaltoad/vim-jade'                " Jade syntax highlighting
 Plugin 'editorconfig/editorconfig-vim'       " For consistent styles within projects
+Plugin 'Chiel92/vim-autoformat'              " Autoformat files
+Plugin 'mtscout6/vim-cjsx'                   " Coffee-JSX syntax highlighting
 
 " My plugins
 Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh
@@ -58,5 +60,13 @@ Plugin 'emilsoman/my-filetype-overrides.vim' " Filetype specific vimfu
 " =================
 Plugin 'tpope/vim-fireplace'                 " Repl integration from vim
 Plugin 'kien/rainbow_parentheses.vim'        " Multicolored parens
+
+" Stuff for Go
+" ============
+Plugin 'fatih/vim-go'
+
+" Stuff for Elixir
+" ================
+Plugin 'elixir-lang/vim-elixir'
 
 filetype on

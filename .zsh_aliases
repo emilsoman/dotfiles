@@ -2,7 +2,7 @@
 # MY BASH ALIASES
 #
 #Current Project Path here :
-export CURRENT_PROJECT_PATH='~/Workspace/turbo'
+source ~/.zsh_project_aliases
 
 #Dont use rubygems-bundler that always assumes you want to 'bundle exec' everything
 export NOEXEC_DISABLE=1
@@ -31,7 +31,7 @@ alias hostdir='ruby -run -e httpd . -p 5000'
 alias todo="grep -r 'OPTIMIZE\|FIXME\|TODO' *"
 alias clipboard='xclip -sel clip'
 alias journal="$EDITOR ~/Workspace/Tasks/$(date +%F).md"
-alias tcplisten="lsof -iTCP -sTCP:LISTEN"
+alias tcplisten="lsof -iTCP -sTCP:LISTEN -P"
 alias rtags="ctags -R --languages=ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
 alias ctags="ctags -R --languages=c,ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
 alias be="bundle exec"
@@ -39,23 +39,20 @@ alias vimrc="vi ~/.vimrc"
 alias vimbundle="vi ~/.vim/vimrc.bundles"
 alias z="zeus"
 alias gdc=gdca
+alias speedtest="wget -O /dev/null http://speedtest.che01.softlayer.com/downloads/test100.zip"
+
+# List all ssh'ed users. (Usually followed by kill -9 <pid> to log them out)
+alias sshusers="ps aux | egrep \"sshd: [a-zA-Z]+@\""
 
 #Project Path Aliases
 alias wspace='cd ~/Workspace && clear && pwd'
 alias personal='cd ~/Personal && clear && pwd'
 alias ref='cd ~/Reference && clear && pwd'
 alias blog='cd ~/Personal/blog && clear && pwd'
-alias hmer='cd ~/Personal/homer && clear && pwd'
 alias testing='cd ~/Testing && clear && pwd'
-alias bisl='cd ~/Personal/bisleri && clear && pwd'
 alias oss='cd ~/OpenSource && clear && pwd'
-alias rbkit='cd ~/OpenSource/rbkit && clear && pwd'
 alias precommit=".git/hooks/pre-commit"
 alias dotfiles="personal && cd dotfiles"
-alias of="cd ~/Personal/of_v0.8.4_osx_release && clear && pwd"
-alias ofs="cd ~/Personal/of_v0.8.4_osx_release/apps/myApps && clear && pwd"
-alias gcrc="~/Personal/GCRC2015"
-alias talk="cd ~/Personal/DIY_CPU_Profiler && clear"
 
 #Tmux shortcuts
 alias tkill='tmux kill-session'

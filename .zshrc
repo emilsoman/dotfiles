@@ -60,6 +60,13 @@ source ~/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh
 # To use Direnv with zsh
 eval "$(direnv hook zsh)"
 
+# For Go
+#export GOPATH=$HOME/golang
+export GOPATH=/Users/emil/Workspace/go
+#export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:$GOROOT/bin
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
