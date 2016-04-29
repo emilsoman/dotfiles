@@ -45,6 +45,7 @@ let g:ctrlp_working_path_mode = 0
 " =========
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 " UltiSnips
@@ -99,6 +100,7 @@ let g:EasyMotion_smartcase = 1
 " ============
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_conceal = 0
 
 " rainbow_parenthesis.vim
 " =======================
@@ -134,3 +136,6 @@ nmap         ++  vip++
 " ===============
 noremap <silent> <Leader>R :call TestRunnerRunAllTests()<CR>
 noremap <silent> <Leader>r :call TestRunnerRunCurrentTest()<CR>
+
+" Do not conceal quotes in json files (caused by indentLine plugin)
+let g:vim_json_syntax_conceal = 0

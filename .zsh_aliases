@@ -7,7 +7,9 @@ source ~/.zsh_project_aliases
 #Dont use rubygems-bundler that always assumes you want to 'bundle exec' everything
 export NOEXEC_DISABLE=1
 
-alias vi='/usr/local/bin/vim'
+#alias vi='/usr/local/bin/vim'
+#alias vim='nvim -u ~/.vimrc'
+alias vi='vim'
 export EDITOR='vim'
 #alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
 #alias sq='mysql -u root -proot'

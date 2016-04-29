@@ -26,7 +26,6 @@ Plugin 'danro/rename.vim'                    " Easy file renaming
 Plugin 'godlygeek/tabular'                   " Tabular text alignment
 Plugin 'junegunn/goyo.vim'                   " Zen mode editing
 Plugin 'regedarek/ZoomWin'                   " Zoom in and out of windows
-Plugin 'terryma/vim-smooth-scroll'           " Smooth scrolling
 Plugin 'sjl/gundo.vim'                       " Visualize undo tree
 Plugin 'Lokaltog/vim-easymotion'             " Easily move around text
 Plugin 'ConradIrwin/vim-bracketed-paste'     " No more se paste
@@ -40,6 +39,8 @@ Plugin 'shinokada/dragvisuals.vim'           " Drag visual selections
 Plugin 'nixon/vim-vmath'                     " Math summary for visual selections
 Plugin 'bruno-/vim-husk'                     " Bash mappings in Vim command mode
 Plugin 'Yggdroot/indentLine'                 " Shows vertical indentation lines
+Plugin 'jeetsukumaran/vim-indentwise'        " Movements using indentation
+Plugin 'Elzr/Vim-json'                       " Fine grained syntax highlighting for JSON
 Plugin 'haya14busa/incsearch.vim'            " Incremental searches
 Plugin 'benmills/vimux'                      " Send commands to tmux
 Plugin 'zerowidth/vim-copy-as-rtf'           " Copy syntax highlighted text
@@ -50,9 +51,9 @@ Plugin 'mtscout6/vim-cjsx'                   " Coffee-JSX syntax highlighting
 
 " My plugins
 Plugin 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh
-Plugin 'emilsoman/spec-outline.vim'          " Spec outlines for spec files
+"Plugin 'emilsoman/spec-outline.vim'          " Spec outlines for spec files
 Plugin 'emilsoman/test-runner.vim'           " Test runner shortcuts
-Plugin 'emilsoman/indent-highlight.vim'      " Highlight current block
+"Plugin 'emilsoman/indent-highlight.vim'      " Highlight current block
 Plugin 'emilsoman/my-filetype-overrides.vim' " Filetype specific vimfu
 
 
@@ -63,10 +64,14 @@ Plugin 'kien/rainbow_parentheses.vim'        " Multicolored parens
 
 " Stuff for Go
 " ============
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 
 " Stuff for Elixir
 " ================
 Plugin 'elixir-lang/vim-elixir'
+
+" Stuff for Elm
+" =============
+Plugin 'lambdatoast/elm.vim'
 
 filetype on

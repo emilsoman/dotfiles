@@ -34,6 +34,7 @@ set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
 "set shell=/usr/local/bin/zsh         " Let's try using zsh
+set shell=/bin/zsh\ -l
 set t_ut=                   " Disable background color erase
 set synmaxcol=300           " Don't syn-highlight characters after 300 columns
 set nojoinspaces            " Use only 1 space after "." when joining lines
@@ -92,11 +93,6 @@ set timeoutlen=1000 ttimeoutlen=0
 " Turn on spellcheck in markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
 
-" Plugin config overrides
-" =======================
-if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
-  source ~/.vim/vimrc.plugin_overrides
-endif
 
 " Load plugins
 " ============
@@ -104,6 +100,11 @@ if filereadable(expand("~/.vim/vimrc.bundles"))
   source ~/.vim/vimrc.bundles
 endif
 
+" Plugin config overrides
+" =======================
+if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
+  source ~/.vim/vimrc.plugin_overrides
+endif
 
 " Colors
 " ======
@@ -191,7 +192,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Use tab to jump to closing/opening matches
-nnoremap <tab> %
+"nnoremap <tab> %
 
 " Jump to end or beginning in insert mode
 inoremap <C-Right> <esc>A
@@ -213,6 +214,11 @@ nnoremap h :echo "You're so two-thousand and late"<cr>
 nnoremap j :echo "You're so two-thousand and late"<cr>
 nnoremap k :echo "You're so two-thousand and late"<cr>
 nnoremap l :echo "You're so two-thousand and late"<cr>
+
+" Disable ( and ) since I don't use them
+" ======================================
+nmap ( <Nop>
+nmap ) <Nop>
 
 " Kashyap's extra bindings for pairing
 "imap jk <Esc>
