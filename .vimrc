@@ -199,14 +199,14 @@ inoremap <C-Right> <esc>A
 inoremap <C-Left> <esc>I
 
 " Abbreviations
-iabbr dbg require 'debugger'; debugger
-iabbr pryy require 'pry'; binding.pry
+"iabbr dbg require 'debugger'; debugger
+"iabbr pryy require 'pry'; binding.pry
 iabbr sph require 'spec_helper'
 iabbr rah require 'rails_helper'
 iabbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
 "Cucumber regex abbrs
-iabbr mq "([^"]*)"
-iabbr st /^ "([^"]*)"  $/
+"iabbr mq "([^"]*)"
+"iabbr st /^ "([^"]*)"  $/
 
 " This is how I roll
 " ==================
