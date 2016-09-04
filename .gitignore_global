@@ -19,3 +19,5 @@
 /mongodb
 /*.dump
 .DS_Store
+/dump.rdb
+.envrc

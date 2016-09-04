@@ -11,7 +11,6 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = '📌'
 let g:airline_symbols.whitespace = '💀'
@@ -39,14 +38,6 @@ endif
 let g:ctrlp_clear_cache_on_exit = 0
 " CtrlP should index CWD
 let g:ctrlp_working_path_mode = 0
-
-
-" Syntastic
-" =========
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
-
 
 " UltiSnips
 " =========
@@ -139,3 +130,18 @@ noremap <silent> <Leader>r :call TestRunnerRunCurrentTest()<CR>
 
 " Do not conceal quotes in json files (caused by indentLine plugin)
 let g:vim_json_syntax_conceal = 0
+
+" Enable JSX syntax highlighting for JS files as well
+let g:jsx_ext_required = 0
+
+" Run neomake in the background
+autocmd! BufWritePost * Neomake
+
+" neomake configs
+let g:neomake_elixir_enabled_makers = ['credo']
+
+" Run tests using vim-test in neovim terminal
+let test#strategy = 'neovim'
+nmap <silent> <leader>r :TestNearest<CR>
+nmap <silent> <leader>R :TestFile<CR>
+nmap <silent> l :TestLast<CR>

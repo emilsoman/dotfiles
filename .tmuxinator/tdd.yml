@@ -1,0 +1,11 @@
+# ~/.tmuxinator/tdd.yml
+
+name: tdd
+root: .
+
+windows:
+  - editor:
+      layout: 3b06,130x37,0,0[130x26,0,0{65x26,0,0,0,64x26,66,0,2},130x10,0,27,3]
+      panes:
+        - vim
+        - vim

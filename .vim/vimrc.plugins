@@ -1,0 +1,58 @@
+call plug#begin('~/.vim/bundle')
+
+" Define bundles via Github repos
+Plug 'rking/ag.vim'                        " silver searcher in vim
+Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy file finder
+Plug 'scrooloose/nerdcommenter'            " Comment & uncomment
+Plug 'vim-ruby/vim-ruby'                   " Ruby autocomplete etc
+
+" Autocompletion
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+Plug 'SirVer/ultisnips'                    " Autocomplete snippets
+Plug 'honza/vim-snippets'                  " LOADS of snippets
+Plug 'kchmck/vim-coffee-script'            " Coffee filetype
+Plug 'tpope/vim-endwise'                   " Auto insert 'end' in ruby
+Plug 'tpope/vim-fugitive'                  " Gblame and Gdiff FTW
+Plug 'airblade/vim-gitgutter'              " Git status on gutter
+Plug 'vim-scripts/matchit.zip'             " Match stuff with %
+Plug 'bling/vim-airline'                   " Fancy statusline
+Plug 'morhetz/gruvbox'                     " Color theme
+Plug 'danro/rename.vim'                    " Easy file renaming
+Plug 'godlygeek/tabular'                   " Tabular text alignment
+Plug 'junegunn/goyo.vim'                   " Zen mode editing
+Plug 'troydm/zoomwintab.vim'               " Zoom in and out of windows using tabs
+Plug 'sjl/gundo.vim'                       " Visualize undo tree
+Plug 'Lokaltog/vim-easymotion'             " Easily move around text
+Plug 'ConradIrwin/vim-bracketed-paste'     " No more se paste
+Plug 'Raimondi/delimitMate'                " Autoclose parens and quotes
+Plug 'plasticboy/vim-markdown'             " Markdown highlighting
+Plug 'AndrewRadev/splitjoin.vim'           " gJ and gS to join and split blocks
+Plug 'AndrewRadev/linediff.vim'            " Diff 2 blocks of text
+Plug 'terryma/vim-expand-region'           " Expand(v)/shrink(C-v) vis selection
+Plug 'shinokada/dragvisuals.vim'           " Drag visual selections
+Plug 'nixon/vim-vmath'                     " Math summary for visual selections
+Plug 'bruno-/vim-husk'                     " Bash mappings in Vim command mode
+Plug 'Yggdroot/indentLine'                 " Shows vertical indentation lines
+Plug 'jeetsukumaran/vim-indentwise'        " Movements using indentation
+Plug 'Elzr/Vim-json'                       " Fine grained syntax highlighting for JSON
+Plug 'haya14busa/incsearch.vim'            " Incremental searches
+Plug 'zerowidth/vim-copy-as-rtf'           " Copy syntax highlighted text
+Plug 'isRuslan/vim-es6'                    " Syntax and snippets for ES6
+Plug 'pangloss/vim-javascript'             " Syntax highlighting for JS
+Plug 'neomake/neomake'                      " Async filetype make for neovim
+Plug 'janko-m/vim-test'                     " Async tests
+
+" My plugins
+Plug 'emilsoman/open-github-commit.vim'    " Opens current line's commit in gh
+
+" Stuff for Elixir
+" ================
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+
+" Stuff for Elm
+" =============
+"Plug 'lambdatoast/elm.vim'
+
+call plug#end()

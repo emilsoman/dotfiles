@@ -9,8 +9,8 @@ export NOEXEC_DISABLE=1
 
 #alias vi='/usr/local/bin/vim'
 #alias vim='nvim -u ~/.vimrc'
-alias vi='vim'
-export EDITOR='vim'
+alias vi='nvim'
+export EDITOR='nvim'
 #alias vpn="sudo openvpn --cd ~/Tools/VPN --config client.conf --askpass passkey"
 #alias sq='mysql -u root -proot'
 alias gitlog='git log --name-status'
@@ -37,11 +37,12 @@ alias tcplisten="lsof -iTCP -sTCP:LISTEN -P"
 alias rtags="ctags -R --languages=ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
 alias ctags="ctags -R --languages=c,ruby,coffee --exclude=.git --exclude=log --exclude=vendor --fields=+l"
 alias be="bundle exec"
-alias vimrc="vi ~/.vimrc"
-alias vimbundle="vi ~/.vim/vimrc.bundles"
+alias vimrc="nvim ~/.vimrc"
+alias vimbundle="nvim ~/.vim/vimrc.plugins"
 alias z="zeus"
 alias gdc=gdca
 alias speedtest="wget -O /dev/null http://speedtest.che01.softlayer.com/downloads/test100.zip"
+alias inet="ifconfig | grep \"inet \" | grep -v 127.0.0.1 | awk '{print \$2}'"
 
 # List all ssh'ed users. (Usually followed by kill -9 <pid> to log them out)
 alias sshusers="ps aux | egrep \"sshd: [a-zA-Z]+@\""
@@ -52,6 +53,7 @@ alias personal='cd ~/Personal && clear && pwd'
 alias ref='cd ~/Reference && clear && pwd'
 alias blog='cd ~/Personal/blog && clear && pwd'
 alias testing='cd ~/Testing && clear && pwd'
+alias dojo='cd ~/Dojo && clear && pwd'
 alias oss='cd ~/OpenSource && clear && pwd'
 alias precommit=".git/hooks/pre-commit"
 alias dotfiles="personal && cd dotfiles"
@@ -60,5 +62,6 @@ alias dotfiles="personal && cd dotfiles"
 alias tkill='tmux kill-session'
 alias talk_tmux_host='tmux new -s talk'
 alias talk_tmux_client='tmux attach -t talk'
+alias mux='tmuxinator'
 
 alias rbkit-chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --load-extension=/Users/emil/Testing/rbkit-chrome --user-data-dir=$(mktemp -d -t chrome)'

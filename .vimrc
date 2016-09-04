@@ -1,7 +1,7 @@
 " Change some default Vim configs
 " ===============================
 
-set nocompatible " No need of compatibility with vi
+"set nocompatible " No need of compatibility with vi
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
 " Enable Filetype magic
@@ -34,10 +34,12 @@ set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
 "set shell=/usr/local/bin/zsh         " Let's try using zsh
-set shell=/bin/zsh\ -l
-set t_ut=                   " Disable background color erase
+"set shell=/bin/zsh\ -l
+"set shell=zsh
+"set t_ut=                   " Disable background color erase
 set synmaxcol=300           " Don't syn-highlight characters after 300 columns
 set nojoinspaces            " Use only 1 space after "." when joining lines
+set mouse=                  " Disable mouse
 
 " Use 2 spaces for tab
 set tabstop=2
@@ -53,11 +55,11 @@ set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
 " Use 256 colors when terminal allows
-if $TERM =~ '256color'
-  set t_Co=256
-elseif $TERM =~ '^xterm$'
-  set t_Co=256
-endif
+"if $TERM =~ '256color'
+  "set t_Co=256
+"elseif $TERM =~ '^xterm$'
+  "set t_Co=256
+"endif
 
 "Draw a dark grey ruler at 80 chars
 set colorcolumn=80
@@ -65,17 +67,18 @@ highlight ColorColumn ctermbg=234
 
 " Show line cursor in insert mode
 " and block cursor in normal mode
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+"if exists('$TMUX')
+  "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"else
+  "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"endif
 
 " Disable error bells
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+"set noerrorbells visualbell t_vb=
+"autocmd GUIEnter * set visualbell t_vb=
 
 " MOAR undo which persists
 set undolevels=10000
@@ -96,8 +99,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Load plugins
 " ============
-if filereadable(expand("~/.vim/vimrc.bundles"))
-  source ~/.vim/vimrc.bundles
+if filereadable(expand("~/.vim/vimrc.plugins"))
+  source ~/.vim/vimrc.plugins
 endif
 
 " Plugin config overrides
@@ -219,6 +222,9 @@ nnoremap l :echo "You're so two-thousand and late"<cr>
 " ======================================
 nmap ( <Nop>
 nmap ) <Nop>
+
+" ESC key comes out of terminal mode when in terminal
+tnoremap <Esc> <C-\><C-n>
 
 " Kashyap's extra bindings for pairing
 "imap jk <Esc>

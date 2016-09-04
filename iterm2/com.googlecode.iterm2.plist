@@ -1017,16 +1017,21 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>929 88 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>499 192 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>528 578 384 129 0 0 1440 900 </string>
+	<string>530 578 384 129 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 294 592 584 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>162 91 650 501 0 0 1440 900 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1948,9 +1953,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
-			<real>0.10000000149011612</real>
+			<real>1.9563008546829224</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2469,7 +2474,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.086829699575901031</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -3369,11 +3374,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.10611827671527863</real>
+				<real>0.031536638736724854</real>
 				<key>Green Component</key>
-				<real>0.1061420664191246</real>
+				<real>0.036517519503831863</real>
 				<key>Red Component</key>
-				<real>0.10612169653177261</real>
+				<real>0.035488862544298172</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -3930,6 +3935,12 @@
 			<string>/Users/emil</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>477585398.92148501</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>486413657.363078</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -3992,11 +4003,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-03-25T06:01:41Z</date>
+	<date>2016-06-02T08:56:00Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -4054,6 +4065,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
