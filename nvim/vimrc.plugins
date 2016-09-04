@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 " Define bundles via Github repos
 Plug 'rking/ag.vim'                        " silver searcher in vim

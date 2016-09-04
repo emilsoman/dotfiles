@@ -1,7 +1,6 @@
 " Change some default Vim configs
 " ===============================
 
-"set nocompatible " No need of compatibility with vi
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
 " Enable Filetype magic
@@ -29,14 +28,10 @@ set wildignore=*.o,*~,*.pyc " Ignore compiled files
 set laststatus=2            " Always show status line
 set statusline=%f           " tail of the filename
 set diffopt=filler,iwhite   " In diff mode, ignore whitespace changes
-set directory=~/.vim/tmp    " Use global swap directory
+set directory=~/.config/nvim/tmp    " Use global swap directory
 set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12
 set backspace=2             " Enable backspace in insert mode
 set shell=/bin/bash         " Can do with bash shell for vim
-"set shell=/usr/local/bin/zsh         " Let's try using zsh
-"set shell=/bin/zsh\ -l
-"set shell=zsh
-"set t_ut=                   " Disable background color erase
 set synmaxcol=300           " Don't syn-highlight characters after 300 columns
 set nojoinspaces            " Use only 1 space after "." when joining lines
 set mouse=                  " Disable mouse
@@ -54,13 +49,6 @@ set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
 " So you can autocomplete from dictionary using <C-X><C-K>
 set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
-" Use 256 colors when terminal allows
-"if $TERM =~ '256color'
-  "set t_Co=256
-"elseif $TERM =~ '^xterm$'
-  "set t_Co=256
-"endif
-
 "Draw a dark grey ruler at 80 chars
 set colorcolumn=80
 highlight ColorColumn ctermbg=234
@@ -68,22 +56,11 @@ highlight ColorColumn ctermbg=234
 " Show line cursor in insert mode
 " and block cursor in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-"if exists('$TMUX')
-  "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-"else
-  "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"endif
-
-" Disable error bells
-"set noerrorbells visualbell t_vb=
-"autocmd GUIEnter * set visualbell t_vb=
 
 " MOAR undo which persists
 set undolevels=10000
 if has("persistent_undo")
-  set undodir=~/.vim/undo " Allow undos to persist even after a file is closed
+  set undodir=~/.config/nvim/undo " Allow undos to persist even after a file is closed
   set undofile
 endif
 
@@ -99,14 +76,14 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 " Load plugins
 " ============
-if filereadable(expand("~/.vim/vimrc.plugins"))
-  source ~/.vim/vimrc.plugins
+if filereadable(expand("~/.config/nvim/vimrc.plugins"))
+  source ~/.config/nvim/vimrc.plugins
 endif
 
 " Plugin config overrides
 " =======================
-if filereadable(expand("~/.vim/vimrc.plugin_overrides"))
-  source ~/.vim/vimrc.plugin_overrides
+if filereadable(expand("~/.config/nvim/vimrc.plugin_overrides"))
+  source ~/.config/nvim/vimrc.plugin_overrides
 endif
 
 " Colors
@@ -120,8 +97,8 @@ colors gruvbox
 
 " Some helper functions
 " =====================
-if filereadable(expand("~/.vim/vimrc.my_functions"))
-  source ~/.vim/vimrc.my_functions
+if filereadable(expand("~/.config/nvim/vimrc.my_functions"))
+  source ~/.config/nvim/vimrc.my_functions
 endif
 
 " Custom maps and abbreviations
@@ -202,21 +179,9 @@ inoremap <C-Right> <esc>A
 inoremap <C-Left> <esc>I
 
 " Abbreviations
-"iabbr dbg require 'debugger'; debugger
-"iabbr pryy require 'pry'; binding.pry
 iabbr sph require 'spec_helper'
 iabbr rah require 'rails_helper'
 iabbr ppp fprintf(stderr, "------%s:%d----\n", __FILE__, __LINE__);
-"Cucumber regex abbrs
-"iabbr mq "([^"]*)"
-"iabbr st /^ "([^"]*)"  $/
-
-" This is how I roll
-" ==================
-nnoremap h :echo "You're so two-thousand and late"<cr>
-nnoremap j :echo "You're so two-thousand and late"<cr>
-nnoremap k :echo "You're so two-thousand and late"<cr>
-nnoremap l :echo "You're so two-thousand and late"<cr>
 
 " Disable ( and ) since I don't use them
 " ======================================
@@ -225,10 +190,5 @@ nmap ) <Nop>
 
 " ESC key comes out of terminal mode when in terminal
 tnoremap <Esc> <C-\><C-n>
-
-" Kashyap's extra bindings for pairing
-"imap jk <Esc>
-"imap kj  <Esc>
-"nnoremap ; :
 
 "set rtp+=$HOME/OpenSource/open-github-commit.vim

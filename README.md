@@ -2,7 +2,7 @@ Installation
 
     git clone git@github.com:emilsoman/dotfiles.git ~/dotfiles
     # Setup symlinks as required
-    # (symlink .vim to ~/.config/nvim and .vimrc to ~/config/init.vim)
+    # (symlink nvim to ~/.config/nvim)
 
 
 Open VIM and run `:PlugInstall`
