@@ -26,7 +26,6 @@ set autoread                " Autoread when a file is changed from the outside
 set wildmenu                " Turn on the WiLd menu
 set wildignore=*.o,*~,*.pyc " Ignore compiled files
 set laststatus=2            " Always show status line
-set statusline=%f           " tail of the filename
 set diffopt=filler,iwhite   " In diff mode, ignore whitespace changes
 set directory=~/.config/nvim/tmp    " Use global swap directory
 set pastetoggle=<F3>        " Toggle paste mode while in insert mode with F12

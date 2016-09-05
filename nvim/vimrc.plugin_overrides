@@ -46,18 +46,6 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
-" YouCompleteMe
-" =============
-" Use up and down for YCM popover nav
-let g:ycm_key_list_select_completion=['<Down>']
-let g:ycm_key_list_previous_completion=['<Up>']
-" Autocomplete using words from comments and strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_filetype_specific_completion_to_disable = {'ruby': 1}
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-
 " vim-ruby
 " ========
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
@@ -138,10 +126,45 @@ let g:jsx_ext_required = 0
 autocmd! BufWritePost * Neomake
 
 " neomake configs
-let g:neomake_elixir_enabled_makers = ['credo']
+let g:neomake_elixir_enabled_makers = ['mycredo']
+function NeomakeCredoErrorType(entry)
+    if a:entry.type ==# 'F'      " Refactoring opportunities
+        let type = 'W'
+    elseif a:entry.type ==# 'D'  " Software design suggestions
+        let type = 'I'
+    elseif a:entry.type ==# 'W'  " Warnings
+        let type = 'W'
+    elseif a:entry.type ==# 'R'  " Readability suggestions
+        let type = 'I'
+    elseif a:entry.type ==# 'C'  " Convention violation
+        let type = 'W'
+    else
+        let type = 'M'           " Everything else is a message
+    endif
+    let a:entry.type = type
+endfunction
+let g:neomake_elixir_mycredo_maker = {
+      \ 'exe': 'mix',
+      \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
+      \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
+      \ 'postprocess': function('NeomakeCredoErrorType')
+      \ }
 
 " Run tests using vim-test in neovim terminal
 let test#strategy = 'neovim'
 nmap <silent> <leader>r :TestNearest<CR>
 nmap <silent> <leader>R :TestFile<CR>
 nmap <silent> l :TestLast<CR>
+
+" Deoplete
+" ========
+let g:deoplete#enable_at_startup = 2
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_refresh_delay = 0
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#auto_complete_start_length = 1
+call deoplete#custom#set('_', 'matchers', ['matcher_length', 'matcher_full_fuzzy'])
+" Use arrow keys to insert deoplete selections
+inoremap <expr><Down>  pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
+
